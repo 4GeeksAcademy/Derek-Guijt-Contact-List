@@ -1,0 +1,11 @@
+.contact-form {
+    max-width: 500px; 
+    width: 100%;
+  }
+  
+  .contact-form input,
+  .contact-form button {
+    margin: 5px 0; 
+    width: 100%; 
+  }
+  

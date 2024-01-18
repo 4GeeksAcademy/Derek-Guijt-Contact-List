@@ -1,0 +1,10 @@
+.edit-contact-form {
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .edit-contact-form input,
+  .edit-contact-form button {
+    margin: 10px 0; 
+    width: 100%; 
+  }
