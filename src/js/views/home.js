@@ -14,7 +14,7 @@ export const Home = () => {
 
   useEffect(() => {
     actions.getContacts();
-  }, [actions]);
+  }, []);
 
   const handleAddContact = () => {
     actions.addContact(
@@ -24,6 +24,7 @@ export const Home = () => {
       newContact.address
     );
     setNewContact({ name: "", phone: "", email: "", address: "" });
+	window.location.reload(false);
   };
 
   const handleInputChange = (e) => {
