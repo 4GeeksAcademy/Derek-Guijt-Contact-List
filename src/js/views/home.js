@@ -13,7 +13,7 @@ export const Home = () => {
   });
 
   useEffect(() => {
-    actions.getContacts(); // Fetch contacts on component mount
+    actions.getContacts();
   }, [actions]);
 
   const handleAddContact = () => {
@@ -23,7 +23,7 @@ export const Home = () => {
       newContact.email,
       newContact.address
     );
-    setNewContact({ name: "", phone: "", email: "", address: "" }); // Reset form after adding
+    setNewContact({ name: "", phone: "", email: "", address: "" });
   };
 
   const handleInputChange = (e) => {
@@ -34,7 +34,7 @@ export const Home = () => {
     <div className="d-flex flex-column align-items-center">
       <h1>Contact List</h1>
 
-      {/* Add Contact Form */}
+     
       <div className="contact-form text-center">
         <div>
           <input
@@ -68,7 +68,7 @@ export const Home = () => {
           <button onClick={handleAddContact}>Add Contact</button>
         </div>
 
-        {/* Contact List */}
+        
         <ul className="list-unstyled">
           {store.contacts.length > 0 ? (
             store.contacts.map((contact) => (

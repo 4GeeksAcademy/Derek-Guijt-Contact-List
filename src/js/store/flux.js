@@ -23,7 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				phone: phone,
 				email: email,
 				address: address,
-				agenda_slug: "alejo",
+				agenda_slug: "DerekGuijt",
 			  }),
 			}
 		  );
@@ -56,7 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				phone: phone,
 				email: email,
 				address: address,
-				agenda_slug: "alejo",
+				agenda_slug: "DerekGuijt",
 			  }),
 			}
 		  );
