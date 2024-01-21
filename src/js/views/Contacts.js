@@ -4,35 +4,29 @@ import { Context } from "../store/appContext";
 import "../../styles/Contacts.css";
 
 const Contacts = () => {
-  let params  = useParams();
+  let { id }  = useParams();
   const navigate = useNavigate();
   const { store, actions } = useContext(Context);
-  // const [contact, setContact] = useState({
-  //   name: "",
-  //   phone: "",
-  //   email: "",
-  //   address: "",
-  // });
+  const [contact, setContact] = useState("");
   const [name, setname] = useState("");
   const [phone, setphone] = useState("");
   const [email, setemail] = useState("");
   const [address, setaddress] = useState("");
 
   const loadContact = () => {
-    fetch("https://playground.4geeks.com/apis/fake/contact/" + params.id)
+    fetch("https://playground.4geeks.com/apis/fake/contact/" + id)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
-      setname(data[0].full_name)
-      setaddress(data[0].address)
-      setemail(data[0].email)
-      setphone(data[0].phone)
+      setname(data.full_name)
+      setaddress(data.address)
+      setemail(data.email)
+      setphone(data.phone)
     });
   }
   const editingContact = (e) => {
     e.preventDefault()
     console.log(name,email,phone,address)
-    actions.editContact(name,email,phone,address)
+    actions.editContact(id, name, phone, email, address)
     setname("")
     setaddress("")
     setemail("")
@@ -102,7 +96,7 @@ const Contacts = () => {
           />
           <br />
           <button onClick={(e) => editingContact(e)}>Save Changes</button>
-          <button onClick={() => actions.deleteContact(params.id)}>Delete</button>
+          <button onClick={() => deleteContact(id)}>Delete</button>
         </div>
       </div>
     </div>
